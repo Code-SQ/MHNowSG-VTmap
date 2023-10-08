@@ -105,19 +105,29 @@ function parseCSV(csvText) {
   return result;
 }
 
-// Define a function to get the fill color based on habitatCode
+// Define a function to get the fill color based on habitatCode and current UTC 0 date
 function getColorForHabitatCode(habitatCode) {
-  // Implement your logic to map habitatCode to a color
-  // For example, you can use a switch statement or a lookup table
+  // Specify the start date in UTC 0 time zone (YYYY-MM-DD format)
+  const startDate = new Date('2023-09-14');
 
-  switch (habitatCode) {
-    case '1':
-      return 'green';
-    case '2':
-      return 'yellow';
-    case '3':
-      return 'purple';
-    default:
-      return 'white';
+  // Get the current UTC 0 date
+  const currentDate = new Date();
+  currentDate.setUTCHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0 to ensure UTC 0 time
+
+  // Calculate the number of days since the start date
+  const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+
+  // Define an array of colors in the desired sequence (green -> yellow -> purple)
+  const colors = ['#00FF00', '#FFFF00', '#FF00FF'];
+
+  // If habitatCode is 0 or undefined, return white
+  if (habitatCode === '0' || habitatCode === undefined) {
+      return '#FFFFFF'; // White color
   }
+
+  // Calculate the index of the color to use based on habitatCode and days passed
+  const colorIndex = (parseInt(habitatCode) - 1 + daysPassed) % colors.length;
+
+  // Return the color based on the color index
+  return colors[colorIndex];
 }
