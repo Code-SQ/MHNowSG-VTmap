@@ -1,0 +1,27 @@
+/* Style the container to take up the entire viewport */
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Style the "Get My Location" button */
+#getLocationButton {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the button is above the map */
+}
+
+/* Style the map to fill the container */
+#map {
+    width: 100%;
+    height: 100%;
+}
