@@ -19,6 +19,12 @@
     cursor: pointer;
     z-index: 1000; /* Ensure the button is above the map */
     font-family: Arial, sans-serif; /* Set the font family to Arial */
+    /* Disable text selection */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari and older versions of Chrome */
+
+    /* Prevent long tap actions on mobile devices */
+    touch-action: manipulation;
 }
 
 /* Style the "Open Form" button */
@@ -34,6 +40,12 @@
     border-radius: 4px;
     z-index: 1000; /* Ensure the button is above the map */
     font-family: Arial, sans-serif; /* Set the font family to Arial */
+    /* Disable text selection */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari and older versions of Chrome */
+
+    /* Prevent long tap actions on mobile devices */
+    touch-action: manipulation;
 }
 
 #habitatInfo {
@@ -46,6 +58,13 @@
     border-radius: 4px;
     z-index: 1000; /* Ensure the div is above the map */
     font-family: Arial, sans-serif; /* Set the font family to Arial */
+    /* Disable text selection */
+    user-select: none;
+    -webkit-user-select: none; /* For Safari and older versions of Chrome */
+
+    /* Prevent long tap actions on mobile devices */
+    touch-action: manipulation;
+    
 }
 
 /* Style the map to fill the container */
