@@ -30,7 +30,7 @@
     color: #fff; /* White text color */
     padding: 10px; /* Adjust padding as needed */
     cursor: pointer;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 4px;
     z-index: 1000; /* Ensure the button is above the map */
     font-family: Arial, sans-serif; /* Set the font family to Arial */
