@@ -18,6 +18,34 @@
     border-radius: 4px;
     cursor: pointer;
     z-index: 1000; /* Ensure the button is above the map */
+    font-family: Arial, sans-serif; /* Set the font family to Arial */
+}
+
+/* Style the "Open Form" button */
+#openFormButton {
+    position: absolute;
+    top: 60px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+    background-color: #7851a9; /* Purple background color */
+    color: #fff; /* White text color */
+    padding: 10px; /* Adjust padding as needed */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    z-index: 1000; /* Ensure the button is above the map */
+    font-family: Arial, sans-serif; /* Set the font family to Arial */
+}
+
+#habitatInfo {
+    position: absolute;
+    top: 110px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+    background-color: #ffffff; /* White background color */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 1000; /* Ensure the div is above the map */
+    font-family: Arial, sans-serif; /* Set the font family to Arial */
 }
 
 /* Style the map to fill the container */

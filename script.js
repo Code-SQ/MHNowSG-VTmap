@@ -1,4 +1,15 @@
-// Define the map and its initial view
+function openFormPage() {
+  // Specify the URL to open in a new tab
+  var url = 'https://forms.gle/NGdhNVEBQyZfKXsp8';
+
+  // Open the URL in a new tab or window
+  window.open(url, '_blank');
+}
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Define the map and its initial view
 var map = L.map('map').setView([1.287953, 103.851784], 14);
 
 // Add a base tile layer (e.g., OpenStreetMap)
@@ -131,3 +142,31 @@ function getColorForHabitatCode(habitatCode) {
   // Return the color based on the color index
   return colors[colorIndex];
 }
+
+// Define a function to update the habitat information
+function updateHabitatInfo() {
+  // Get the current UTC 0 date in yyyy-mm-dd format
+  const currentDate = new Date();
+  currentDate.setUTCHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0 to ensure UTC 0 time
+  const currentUTCDate = currentDate.toISOString().split('T')[0]; // Format the date
+
+  // Define an array of habitats in the desired sequence (Forest -> Desert -> Swamp)
+  const habitats = ['Forest', 'Desert', 'Swamp'];
+
+  // Create the habitat information text
+  var habitatInfoText = 'Habitat Code Info<br>';
+  for (var i = 1; i <= 3; i++) {
+    habitatInfoText += i + ' = ' + habitats[i - 1] + '<br>';
+  }
+  habitatInfoText += 'Current UTC Date: ' + currentUTCDate;
+
+  // Update the habitat information div
+  const habitatInfoDiv = document.getElementById('habitatInfo');
+  if (habitatInfoDiv) {
+    habitatInfoDiv.innerHTML = habitatInfoText;
+  }
+}
+
+// Call the function to initially populate the habitat information
+updateHabitatInfo();
+});

@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Create a container div to hold the map and button -->
+    <!-- Create a container div to hold the map and buttons -->
     <div id="container">
-        <!-- Add the "Get My Location" button inside a div -->
-        <div id="getLocationButton">Get my location</div>
         <!-- Create a div to hold the map -->
         <div id="map"></div>
+        <!-- Add the "Get My Location" button at the top left corner -->
+        <div id="getLocationButton" onclick="getUserLocation()">📍 Get My Location</div>
+        <!-- Add the "Open Form" button at the top right corner -->
+        <div id="openFormButton" onclick="openFormPage()">Open Habitat Survey Form</div>
+        <!-- Add a div to display habitat information -->
+        <div id="habitatInfo"></div>
     </div>
 
     <script src="script.js"></script>
