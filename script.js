@@ -10,7 +10,7 @@ function openFormPage() {
 document.addEventListener('DOMContentLoaded', function () {
 
   // Define the map and its initial view
-var map = L.map('map').setView([1.287953, 103.851784], 14);
+var map = L.map('map').setView([1.287953, 103.851784], 17);
 
 // Add a base tile layer (e.g., OpenStreetMap)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -41,7 +41,7 @@ document.getElementById('getLocationButton').addEventListener('click', function 
             var lon = position.coords.longitude;
 
             // Center the map on the user's location
-            map.setView([lat, lon], 14);
+            map.setView([lat, lon], 17);
 
             // Update the user's marker
             updateUserMarker(lat, lon);
