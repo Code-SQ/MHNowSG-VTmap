@@ -25,9 +25,17 @@ function updateUserMarker(lat, lon) {
         map.removeLayer(userMarker);
     }
 
-    // Create a red marker at the user's location
+    // Create a custom icon for the user marker with a larger size
+    var userIcon = L.divIcon({
+        className: 'user-marker',
+        html: '<div style="font-size: 24px;">📍</div>',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+    });
+
+    // Create the user marker with the custom icon
     userMarker = L.marker([lat, lon], {
-        icon: L.divIcon({ className: 'user-marker', html: '📍' }),
+        icon: userIcon,
     }).addTo(map);
 }
 
