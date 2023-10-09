@@ -54,8 +54,7 @@ document.getElementById('getLocationButton').addEventListener('click', function 
 });
 
 // Fetch grid data from the CSV file using the CORS proxy
-var csvURL = 'https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vSxosCPpLTporUy5svCDRcqxbRgW8RGw7Ua7FJCMlwe27A5SNSvAlRtehk6HnjTbkyzg1KLPziS7FaF/pub?gid=192796888&single=true&output=csv';
-//var csvURL = 'Published_CSV.csv';
+var csvURL = 'Published_CSV.csv';
 
 fetch(csvURL)
   .then(function (response) {
