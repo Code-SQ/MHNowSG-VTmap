@@ -56,10 +56,7 @@ document.getElementById('getLocationButton').addEventListener('click', function 
 // Fetch grid data from the CSV file using the CORS proxy
 var csvURL = 'Published_CSV.csv';
 
-fetch(csvURL, {
-  mode: 'no-cors', // Set the mode to "no-cors"
-  header: header
-})
+fetch(csvURL)
   .then(function (response) {
     return response.text();
   })
