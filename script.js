@@ -145,6 +145,9 @@ function getColorForHabitatCode(habitatCode) {
 
 // Define a function to update the habitat information
 function updateHabitatInfo() {
+  // Specify the start date in UTC 0 time zone (YYYY-MM-DD format)
+  const startDate = new Date('2023-09-14');
+  
   // Get the current UTC 0 date in yyyy-mm-dd format
   const currentDate = new Date();
   currentDate.setUTCHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0 to ensure UTC 0 time
@@ -153,10 +156,14 @@ function updateHabitatInfo() {
   // Define an array of habitats in the desired sequence (Forest -> Desert -> Swamp)
   const habitats = ['Forest', 'Desert', 'Swamp'];
 
+  // Calculate the number of days since the start date
+  const daysPassed = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24));
+
   // Create the habitat information text
   var habitatInfoText = 'Habitat Code Info<br>';
   for (var i = 1; i <= 3; i++) {
-    habitatInfoText += i + ' = ' + habitats[i - 1] + '<br>';
+    const habitatIndex = (i - 1 + daysPassed) % habitats.length;
+    habitatInfoText += i + ' = ' + habitats[habitatIndex] + '<br>';
   }
   habitatInfoText += 'Current UTC Date: ' + currentUTCDate;
 
@@ -166,6 +173,7 @@ function updateHabitatInfo() {
     habitatInfoDiv.innerHTML = habitatInfoText;
   }
 }
+
 
 // Call the function to initially populate the habitat information
 updateHabitatInfo();
