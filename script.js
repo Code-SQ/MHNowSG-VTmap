@@ -54,9 +54,12 @@ document.getElementById('getLocationButton').addEventListener('click', function 
 });
 
 // Fetch grid data from the CSV file using the CORS proxy
-var csvURL = 'https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vSxosCPpLTporUy5svCDRcqxbRgW8RGw7Ua7FJCMlwe27A5SNSvAlRtehk6HnjTbkyzg1KLPziS7FaF/pub?gid=192796888&single=true&output=csv';
+var csvURL = 'Published_CSV.csv';
 
-fetch(csvURL)
+fetch(csvURL, {
+  mode: 'no-cors', // Set the mode to "no-cors"
+  header: header
+})
   .then(function (response) {
     return response.text();
   })
@@ -147,7 +150,7 @@ function getColorForHabitatCode(habitatCode) {
 function updateHabitatInfo() {
   // Specify the start date in UTC 0 time zone (YYYY-MM-DD format)
   const startDate = new Date('2023-09-14');
-  
+
   // Get the current UTC 0 date in yyyy-mm-dd format
   const currentDate = new Date();
   currentDate.setUTCHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0 to ensure UTC 0 time
