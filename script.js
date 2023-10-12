@@ -228,9 +228,18 @@ document.addEventListener('DOMContentLoaded', function () {
         var treeMarker = L.marker([marker.lat, marker.lon], {
             icon: createTreeMarkerIcon(),
         }).addTo(map);
+        
+        // Add a Tooltip that displays the name when hovering over the marker
+        treeMarker.bindTooltip(markers[i].name, {
+          permanent: false, // Set this to false to make the Tooltip show on hover
+          direction: 'top',
+          offset: [0, -20]
+        });
 
-        // Add a tooltip that displays the name when hovering over the marker
-        treeMarker.bindTooltip(marker.name, { permanent: true, direction: 'top', offset: [0, -20] });
+        // Add a click event to display the Tooltip when clicked
+        treeMarker.on('click', function () {
+          treeMarker.openTooltip();
+        });
     });
   }
 
