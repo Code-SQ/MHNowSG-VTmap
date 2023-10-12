@@ -225,21 +225,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // Function to add tree markers to the map
   function addTreeMarkers() {
     markers.forEach(function (marker) {
-        var treeMarker = L.marker([marker.lat, marker.lon], {
-            icon: createTreeMarkerIcon(),
-        }).addTo(map);
-        
-        // Add a Tooltip that displays the name when hovering over the marker
-        treeMarker.bindTooltip(markers[i].name, {
-          permanent: false, // Set this to false to make the Tooltip show on hover
+      var treeMarker = L.marker([markers[i].lat, markers[i].lon], {
+        icon: createTreeMarkerIcon(),
+      }).addTo(map);
+      
+      // Add a Tooltip that displays the name when hovering over the marker
+      treeMarker.bindTooltip(markers[i].name, {
+          permanent: false,
           direction: 'top',
           offset: [0, -20]
-        });
-
-        // Add a click event to display the Tooltip when clicked
-        treeMarker.on('click', function () {
+      });
+      
+      // Handle mouse events to show/hide the Tooltip
+      treeMarker.on('mouseover', function () {
           treeMarker.openTooltip();
-        });
+      });
+      
+      treeMarker.on('mouseout', function () {
+          treeMarker.closeTooltip();
+      });
+      
+      // Handle click event to show/hide the Tooltip
+      treeMarker.on('click', function () {
+        if (treeMarker.isTooltipOpen()) {
+            treeMarker.closeTooltip();
+        } else {
+            treeMarker.openTooltip();
+        }
+      });
     });
   }
 
