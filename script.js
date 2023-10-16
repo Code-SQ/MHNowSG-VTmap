@@ -210,7 +210,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Toa Payoh Town Park', lat: 1.3312729597091675, lon: 103.84647369384766 },
     { name: 'Upper Seletar Reservoir Park', lat: 1.4053939580917358, lon: 103.8080825805664 },
     { name: 'Woodlands Admiral Garden', lat: 1.4375200271606445, lon: 103.79950714111328 },
-    { name: 'Yishun Park', lat: 1.4240150451660156, lon: 103.84410858154297 }
+    { name: 'Yishun Park', lat: 1.4240150451660156, lon: 103.84410858154297 },
+    { name: 'Bugis Junction', lat: 1.299131211395429, lon: 103.85544961289685 }, 
   ];
 
   function createTreeMarkerIcon() {
