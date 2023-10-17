@@ -67,12 +67,6 @@
     
 }
 
-/* Style the tree marker */
-.tree-marker {
-     /* Center the hint text horizontally */
-    text-align: center;
-}
-
 /* Style the map to fill the container */
 #map {
     width: 100%;
