@@ -214,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Bugis Junction', lat: 1.299131211395429, lon: 103.85544961289685, status: 'Verified' },
     { name: 'Hougang Ave 1 Park', lat: 1.35609, lon: 103.88926, status: 'Verified' },
     { name: 'Bukit Panjang Park', lat: 1.37239, lon: 103.77631, status: 'Verified' }
-    
   ];
 
   function createTreeMarkerIcon() {
