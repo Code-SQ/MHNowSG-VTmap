@@ -212,7 +212,9 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Woodlands Admiral Garden', lat: 1.4375200271606445, lon: 103.79950714111328, status: 'Unverified' },
     { name: 'Yishun Park', lat: 1.4240150451660156, lon: 103.84410858154297, status: 'Verified' },
     { name: 'Bugis Junction', lat: 1.299131211395429, lon: 103.85544961289685, status: 'Verified' },
-    { name: 'Hougang Ave 1 Park', lat: 1.35609, lon: 103.88926, status: 'Verified' }
+    { name: 'Hougang Ave 1 Park', lat: 1.35609, lon: 103.88926, status: 'Verified' },
+    { name: 'Bukit Panjang Park', lat: 1.37239, lon: 103.77631, status: 'Verified' }
+    
   ];
 
   function createTreeMarkerIcon() {
