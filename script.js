@@ -214,7 +214,8 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Bugis Junction', lat: 1.299131211395429, lon: 103.85544961289685, status: 'Verified' },
     { name: 'Hougang Ave 1 Park', lat: 1.35609, lon: 103.88926, status: 'Verified' },
     { name: 'Bukit Panjang Park', lat: 1.37239, lon: 103.77631, status: 'Verified' },
-    { name: 'Velocity @ Novena Square', lat: 1.31997, lon: 103.84389, status: 'Verified' }
+    { name: 'Velocity @ Novena Square', lat: 1.31997, lon: 103.84389, status: 'Verified' },
+    { name: 'Bishan Harmony Park', lat: 1.34505, lon: 103.84728, status: 'Verified' }
   ];
 
   function createTreeMarkerIcon() {
