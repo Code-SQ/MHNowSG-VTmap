@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Pasir Ris Park', lat: 1.3777610063552856, lon: 103.94451141357422, status: 'Unverified' },
     { name: 'Singapore Botanic Gardens', lat: 1.3222529888153076, lon: 103.815185546875, status: 'Unverified' },
     { name: 'Tampines Central Park', lat: 1.3538860082626343, lon: 103.93647003173828, status: 'Verified' },
-    { name: 'Toa Payoh Town Park', lat: 1.3312729597091675, lon: 103.84647369384766, status: 'Unverified' },
+    { name: 'Toa Payoh Town Park', lat: 1.3312729597091675, lon: 103.84647369384766, status: 'Verified' },
     { name: 'Upper Seletar Reservoir Park', lat: 1.4053939580917358, lon: 103.8080825805664, status: 'Unverified' },
     { name: 'Woodlands Admiral Garden', lat: 1.4375200271606445, lon: 103.79950714111328, status: 'Unverified' },
     { name: 'Yishun Park', lat: 1.4240150451660156, lon: 103.84410858154297, status: 'Verified' },
