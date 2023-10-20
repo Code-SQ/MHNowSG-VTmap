@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Bukit Batok Central Park', lat: 1.3487269878387451, lon: 103.74644470214844, status: 'Unverified' },
     { name: 'Choa Chu Kang Park', lat: 1.38510000705719, lon: 103.74652099609375, status: 'Verified' },
     { name: 'City Green', lat: 1.3117669820785522, lon: 103.85588073730469, status: 'Unverified' },
-    { name: 'East Coast Park (Zone C)', lat: 1.2979110479354858, lon: 103.90574645996094, status: 'Verified' },
+    { name: 'East Coast Park', lat: 1.3008357579230927, lon: 103.91218659914583, status: 'Verified' },
     { name: 'Fort Canning Park', lat: 1.2912720441818237, lon: 103.84851837158203, status: 'Unverified' },
     { name: 'Gardens by the Bay', lat: 1.2841140031814575, lon: 103.86548614501953, status: 'Unverified' },
     { name: 'Green House', lat: 1.3784600496292114, lon: 103.76513671875, status: 'Unverified' },
