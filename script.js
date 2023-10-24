@@ -216,7 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
     { name: 'Bukit Panjang Park', lat: 1.37239, lon: 103.77631, status: 'Verified' },
     { name: 'Velocity @ Novena Square', lat: 1.31997, lon: 103.84389, status: 'Verified' },
     { name: 'Bishan Harmony Park', lat: 1.34505, lon: 103.84728, status: 'Verified' },
-    { name: 'Admiralty Park', lat: 1.44942, lon: 103.77889, status: 'Verified' }
+    { name: 'Admiralty Park', lat: 1.44942, lon: 103.77889, status: 'Verified' },
+    { name: 'Suntec City', lat: 1.29485, lon: 103.85832, status: 'Small patches around the area' },
+    { name: 'War Memorial Park', lat: 1.29281, lon: 103.85487, status: 'Verified' }
   ];
 
   function createTreeMarkerIcon() {
