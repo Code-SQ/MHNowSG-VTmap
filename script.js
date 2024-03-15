@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Define a function to get the fill color based on habitatCode and current UTC 0 date
   function getColorForHabitatCode(habitatCode) {
     // Specify the start date in UTC 0 time zone (YYYY-MM-DD format)
-    const startDate = new Date('2023-09-14');
+    const startDate = new Date('2024-03-14');
 
     // Get the current UTC 0 date
     const currentDate = new Date();
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Define a function to update the habitat information
   function updateHabitatInfo() {
     // Specify the start date in UTC 0 time zone (YYYY-MM-DD format)
-    const startDate = new Date('2023-09-14');
+    const startDate = new Date('2024-03-14');
 
     // Get the current UTC 0 date in yyyy-mm-dd format
     const currentDate = new Date();
