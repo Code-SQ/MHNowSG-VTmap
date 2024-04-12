@@ -135,7 +135,7 @@ function openFormPage() {
             case 'Swamp':
                 return '#FF00FF'; // Purple color
             default:
-                return '#FFFFFF'; // White color for unknown habitatCode
+                return 'transparent'; // No color for unreported grids
         }
     }
   
