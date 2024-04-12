@@ -94,7 +94,7 @@ function openFormPage() {
 
             // Add the VT.png icon to the center of the polygon when zoom level <= 15
             map.on('zoomend', function () {
-                if (map.getZoom() <= 15) {
+                if (map.getZoom() <= 15 && ['Forest', 'Desert', 'Swamp'].includes(grid.habitatCode)) {
                     var icon = L.icon({
                         iconUrl: 'VT.png',
                         iconSize: [25, 25],
