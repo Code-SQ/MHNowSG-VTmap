@@ -90,7 +90,7 @@ function openFormPage() {
           }).addTo(map);
         
           // You can add popups or other interactions to the polygons here
-          polygon.bindPopup('ID: ' + grid.id + '<br>Habitat Code: ' + grid.habitatCode);
+          polygon.bindPopup('ID: ' + grid.id + '<br>' + grid.habitatCode);
         });
       })
       .catch(function (error) {
@@ -115,7 +115,7 @@ function openFormPage() {
             obj[headers[j]] = value;
           } else {
             // If the cell is empty, provide a default habitatCode value (e.g., '0')
-            obj[headers[j]] = '0';
+            obj[headers[j]] = 'Unknown/Not Volatile';
           }
         }
   
