@@ -91,6 +91,26 @@ function openFormPage() {
         
           // You can add popups or other interactions to the polygons here
           polygon.bindPopup('ID: ' + grid.id + '<br>' + grid.habitatCode);
+
+            // Add the VT.png icon to the center of the polygon when zoom level <= 15
+            map.on('zoomend', function () {
+                if (map.getZoom() <= 15) {
+                    var icon = L.icon({
+                        iconUrl: 'VT.png',
+                        iconSize: [25, 25],
+                        iconAnchor: [13, 13], // Center of the icon
+                    });
+                    var bounds = polygon.getBounds();
+                    var center = bounds.getCenter();
+                    var marker = L.marker(center, { icon: icon }).addTo(map);
+                    polygon.__marker = marker;
+                } else {
+                    if (polygon.__marker) {
+                        map.removeLayer(polygon.__marker);
+                        delete polygon.__marker;
+                    }
+                }
+            });
         });
       })
       .catch(function (error) {
@@ -124,47 +144,6 @@ function openFormPage() {
   
       return result;
     }
-
-    // Define a function to create a custom icon
-    function createCustomIcon() {
-        return L.icon({
-            iconUrl: 'VT.png',
-            iconSize: [25, 25],
-            iconAnchor: [13, 13], // Center the icon on the grid
-        });
-    }
-
-    // Define a function to update the visibility of the icons based on the current zoom level
-    function updateIconVisibility() {
-        var currentZoom = map.getZoom();
-        var icon = createCustomIcon();
-
-        // Loop through the polygons and add/remove icons based on the zoom level
-        gridData.forEach(function (grid) {
-            var habitatCode = grid.habitatCode;
-            var polygon = grid.polygon;
-
-            // Check if the habitatCode is Forest, Desert, or Swamp and the zoom level is <= 15
-            if ((habitatCode === 'Forest' || habitatCode === 'Desert' || habitatCode === 'Swamp') && currentZoom <= 15) {
-                // Add the custom icon to the center of the polygon
-                var latLngBounds = polygon.getBounds();
-                var lat = (latLngBounds._northEast.lat + latLngBounds._southWest.lat) / 2;
-                var lng = (latLngBounds._northEast.lng + latLngBounds._southWest.lng) / 2;
-                var iconMarker = L.marker([lat, lng], { icon: icon }).addTo(map);
-                // Save the iconMarker reference to the grid object for later removal
-                grid.iconMarker = iconMarker;
-            } else {
-                // Remove the icon if it exists
-                if (grid.iconMarker) {
-                    map.removeLayer(grid.iconMarker);
-                    delete grid.iconMarker;
-                }
-            }
-        });
-    }
-
-    // Add a zoomend event listener to the map to update icon visibility
-    map.on('zoomend', updateIconVisibility);
     
     // Define a function to get the fill color based on habitatCode
     function getColorForHabitatCode(habitatCode) {
